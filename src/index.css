@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 375px;
+  --breakpoint-sml: 500px;
+  --breakpoint-md: 667px;
+  --breakpoint-mdl: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-lgl: 1024px;
+  --breakpoint-xl: 1280px;
+  --font-bodyFont: Poppins, sans-serif;
+  --font-titleFont: Montserrat, sans-serif;
+  --color-bodyColor: #212428;
+  --color-lightText: #c4cfde;
+  --color-boxbg: linear-gradient(145deg, #1e2024, #23272b);
+  --color-darkBody: #030712;
+  --color-designColor: #ff014f;
+  --shadow-shadowOne: "10px 10px 19px #1c1e22, -10px -10px 19px #262a2e";
+}
+
+html {
+  scroll-behavior: smooth;
+  transition-duration: 300;
+}
+
+@layer components {
+  .bannerIcon {
+    @apply w-16 h-16 bg-black text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300 dark:bg-blue-950;
+  }
+
+  .active {
+    color: white;
+  }
+
+  .darkActive {
+    color: blue;
+    font-weight: bold;
+  }
+
+  .resume-li {
+    @apply w-full h-20 bg-black dark:bg-blue-950 text-xl text-gray-300 flex justify-center cursor-pointer hover:text-white hover:bg-blue-800 duration-300 items-center border-[1px];
+  }
+
+  .bgOpacity {
+    @apply bg-black;
+  }
+
+  .contact-input {
+    @apply w-full h-12 rounded-lg border-b-[1px] border-b-gray-600 bg-[#191b1e] dark:bg-gray-700 text-white px-4 active:outline-none focus:outline-designColor focus:border-b-transparent duration-300 border-none dark:focus:outline-amber-500;
+  }
+
+  .contact-textarea {
+    @apply w-full rounded-lg border-b-[1px] border-b-gray-600 bg-[#191b1e] dark:bg-gray-700 text-white px-4 py-2 active:outline-none focus:outline-designColor focus:border-b-transparent duration-300 border-none dark:focus:outline-amber-500 resize-y;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
