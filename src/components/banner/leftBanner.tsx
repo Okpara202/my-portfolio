@@ -13,9 +13,9 @@ function LeftBanner() {
       "Technical Writer.",
     ],
     loop: true,
-    typeSpeed: 30,
-    deleteSpeed: 10,
-    delaySpeed: 1000,
+    typeSpeed: 100,
+    deleteSpeed: 50,
+    delaySpeed: 3000,
   });
   return (
     <aside className="w-full lgl:w-[45%] flex flex-col gap-15  lgl:gap-20">
@@ -27,7 +27,7 @@ function LeftBanner() {
           Hi, I am{" "}
           <span className="text-designColor capitalize">Favour Okpara</span>
         </h1>
-        <h2 className=" text-4xl font-bold  text-white dark:text-gray-500">
+        <h2 className=" text-4xl font-bold h-20 text-white dark:text-gray-500">
           a{" "}
           <span>
             {text}

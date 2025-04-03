@@ -5,7 +5,7 @@ function ContactLeft() {
     <div className="w-full lg:w-[35%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b]  rounded-lg p-8 shadow-shadowOne flex flex-col gap-8 justify-center dark:bg-gradient-to-r dark:from-transparent dark:to-transparent dark:border-2 dark:border-gray-300">
       <img
         className="w-full h-64 object-cover rounded-lg"
-        src="../../../public/image/contactImg.png"
+        src="/image/contactImg.png"
         alt="Men shaking hands"
       />
       <div className="flex flex-col gap-4">
