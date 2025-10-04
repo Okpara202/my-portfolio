@@ -12,6 +12,8 @@ import FooterBottom from "./components/footer/footerBottom";
 function App() {
   const [light, setLight] = useState(false);
 
+  // TODO: Add animation to testimonial section
+
   const toggleMode = () => {
     setLight((prevState) => !prevState);
 

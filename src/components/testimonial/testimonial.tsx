@@ -9,6 +9,7 @@ interface ArrowProps {
 }
 
 function SampleNextArrow(props: ArrowProps) {
+  // TODO: Not animated yet
   const { onClick } = props;
   return (
     <div
