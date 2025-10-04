@@ -1,57 +1,64 @@
+import { motion } from "framer-motion";
 import Title from "../layouts/title";
 import ProjectCard from "./projectCard";
+import { projects } from "./projectList";
 
 function Project() {
   return (
     <>
-      <section id="projects" className="w-full py-20">
-        <div className="text-center">
+      <motion.section
+        id="projects"
+        className="w-full py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ margin: "-100px" }}
+      >
+        <motion.div
+          className="text-center"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ margin: "-100px" }}
+        >
           <Title
             title="VISIT MY PORTFOLIO AND GIVE YOUR FEEDBACK"
             des="My Projects"
           />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-14">
-          <ProjectCard
-            title="User Management System"
-            description="I designed a User Management System from scratch using React.js, TypeScript, React Hook Form, and Zod for efficient form handling and validation. Styled with Tailwind CSS, the system ensures a seamless user experience with a modern, responsive interface and robust data management."
-            src={"/image/IMG_20250327_132613.jpg"}
-            link="https://okpara-ums.netlify.app/"
-          />
-          <ProjectCard
-            title="FoodieLand"
-            description="I recreated a Figma design of a restaurant food website using HTML, CSS, and vanilla JavaScript. This project showcases my ability to translate UI/UX designs into fully responsive, interactive web pages with clean code, smooth animations, and an engaging user experience."
-            src={"/image/IMG_20250327_132759.jpg"}
-            link="https://okpara-recipe.netlify.app/"
-          />
-          <ProjectCard
-            title="Quiz App"
-            description="I co-created a Quiz App with Mmesoma Anisiuba using HTML, CSS, and JavaScript. The app features a countdown timer before the quiz starts and displays correct answers at the end, ensuring an interactive and engaging user experience."
-            src={"/image/IMG_20250327_133113.jpg"}
-            link="https://quizzs.onrender.com/"
-          />
+        </motion.div>
 
-          <ProjectCard
-            title="Assembly EndGame"
-            description="I built Assembly Endgame, a React-based word-guessing game with a unique storyline. The programming world is in danger, and to save it, you must guess the correct word. With each wrong guess, a programming language disappears—if only Assembly remains, you lose the game!"
-            src={"/image/IMG_20250327_133822.jpg"}
-            link="https://okparaendgame.netlify.app/"
-          />
-          <ProjectCard
-            title="RoleGuard Auth"
-            description="I created a login form using React Context API, Zod, and React Hook Form, implementing fake authentication. The system dynamically displays different content based on user roles—viewers, editors, and admins—showcasing role-based access control in a seamless user experience"
-            src={"/image/IMG_20250327_134005.jpg"}
-            link="https://okpara-simple.netlify.app/"
-          />
-          <ProjectCard
-            title="GitProfile Viewer"
-            description="GitProfile Viewer is a web app that lets you enter a GitHub username to view detailed profile information, including bio, followers, and public repositories. It links directly to each repository, offering a seamless way to explore and discover open-source contributions and user details."
-            src={"/public/image/IMG_20250327_134436.jpg"}
-            link="https://okpara-git-profile.netlify.app/"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-14">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+              viewport={{ margin: "-50px" }}
+              whileHover={{ y: -10, scale: 1.02 }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                src={project.src}
+                link={project.link}
+              />
+            </motion.div>
+          ))}
         </div>
-      </section>
-      <section className="w-[20%] border-b-[10px] mx-auto border-dotted border-white dark:border-gray-500"></section>
+      </motion.section>
+
+      <motion.section
+        className="w-[20%] border-b-[10px] mx-auto border-dotted border-white dark:border-gray-500"
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ margin: "-100px" }}
+      />
     </>
   );
 }

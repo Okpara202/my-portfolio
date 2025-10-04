@@ -60,3 +60,7 @@ html {
     display: none;
   }
 }
+
+body {
+  overflow-x: hidden;
+}
