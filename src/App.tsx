@@ -34,6 +34,21 @@ function App() {
         <Contact />
         <Footer />
         <FooterBottom />
+
+        {/*Chat me on Whatsapp Contact icon */}
+        <div className="fixed bottom-10 right-10 z-50">
+          <a
+            href="https://wa.me/2349131772736"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Chat me on Whatsapp"
+          >
+            <img
+              src="https://img.icons8.com/color/48/000000/whatsapp.png"
+              alt="WhatsApp"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
