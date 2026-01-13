@@ -1,5 +1,40 @@
 export const projects = [
   {
+    title: "Tutera",
+    description:
+      "Tutera is an LMS built to empower educators across africa to teach, own, and earn on their own terms all in one simple platform.",
+    src: "/image/tutera.jpeg",
+    link: "https://tuteraafrica.xyz/",
+  },
+  {
+    title: "Simbi Ai",
+    description:
+      "An AI-powered study buddy that helps users plan their study schedule and also interact with the Simbi AI chatbot to get answers to their questions.",
+    src: "/image/simbi.png",
+    link: "https://simbi-ai.vercel.app/",
+  },
+  {
+    title: "Adaptly",
+    description:
+      "Leverage the power of Google Chrome Buily-in AI to understand foreign documents with ease in your own language. All you have to do is upload the document and select your preferred language and you will see the action point, summary and translation. You can also interact with the chatbot and get answers to questions related to the document.",
+    src: "/image/Adaptly.png",
+    link: "https://adaptly.onrender.com/",
+  },
+  {
+    title: "Griggs Specialist Hospital Website",
+    description:
+      "The Griggs Hospital Website is a project I collaborated on, I built the frontend using React and Tailwind for styling.",
+    src: "/image/griggs image.png",
+    link: "https://griggsspecialisthospital.com.ng/",
+  },
+  {
+    title: "HashAd",
+    description:
+      "A full-stack advertisement banner manager and portfolio builder that allows students within campuses to upload products and or services and display them across digital spaces",
+    src: "/image/HashAd.png",
+    link: "https://hash-ad.onrender.com/",
+  },
+  {
     title: "User Management System",
     description:
       "I designed a User Management System from scratch using React.js, TypeScript, React Hook Form, and Zod for efficient form handling and validation. Styled with Tailwind CSS, the system ensures a seamless user experience with a modern, responsive interface and robust data management.",
