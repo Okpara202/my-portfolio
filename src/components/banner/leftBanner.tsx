@@ -87,7 +87,7 @@ function LeftBanner() {
       </motion.div>
 
       <motion.a
-        href="/OKPARA FAVOUR CHINECHEREM.pdf"
+        href="/FAVOUR OKPARA C.docx.pdf"
         download
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}

@@ -147,6 +147,27 @@ function Project() {
         </div>
       </motion.section>
 
+      <motion.div
+        className="text-center mt-12 mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ margin: "-100px" }}
+      >
+        <p className="text-lg text-gray-600 dark:text-gray-400 font-light">
+          Visit my{" "}
+          <a
+            href="https://medium.com/@okparafavour202"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 dark:text-blue-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 underline decoration-2 underline-offset-4 hover:underline-offset-2"
+          >
+            Medium Handle
+          </a>{" "}
+          for my publications
+        </p>
+      </motion.div>
+
       <motion.section
         className="w-[20%] border-b-[10px] mx-auto border-dotted border-white dark:border-gray-500"
         initial={{ scaleX: 0, opacity: 0 }}
