@@ -233,7 +233,7 @@ function Testimonial() {
                 >
                   <motion.img
                     className="rounded-lg aspect-square h-72 object-cover object-top"
-                    src="/image/favour1.jpg"
+                    src="/image/lawrence.jpeg"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 1.1 }}
