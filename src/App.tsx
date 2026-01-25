@@ -21,11 +21,11 @@ function App() {
   };
 
   return (
-    <div className="select-none w-full h-auto bg-bodyColor text-lightText dark:bg-white dark:text-black transition-all duration-1000 font-bodyFont px-4">
+    <div className="select-none w-full h-auto bg-bodyColor text-lightText dark:bg-white dark:text-black transition-all duration-1000 font-bodyFont px-4 overflow-x-hidden">
       <div className="sticky top-0 z-50">
         <NavBar toggleMode={toggleMode} light={light} />
       </div>
-      <div className="max-w-screen-xl mx-auto  lgl:px-16">
+      <div className="max-w-screen-xl mx-auto lgl:px-16 overflow-x-hidden">
         <Banner light={light} />
         <Features />
         <Project />
