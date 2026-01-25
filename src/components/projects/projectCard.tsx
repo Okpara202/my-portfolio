@@ -13,11 +13,11 @@ function ProjectCard({
 }) {
   return (
     <a className="cursor-pointer" href={link} target="_blank">
-      <div className="w-full p-4 xl:px-4 h-auto xl:py-10 group rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition-colors duration-1000 dark:bg-gradient-to-r dark:from-transparent dark:to-transparent">
-        <div className="w-full h-[80%] overflow-hidden rounded-lg">
+      <div className="w-full p-4 xl:px-4 h-80 xl:h-96 group rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition-colors duration-1000 dark:bg-gradient-to-r dark:from-transparent dark:to-transparent">
+        <div className="w-full h-40 sm:h-44 md:h-48 lg:h-52 overflow-hidden rounded-lg flex-shrink-0">
           <img
             src={src}
-            className="w-full h-60 object-cover object-top font-semibold"
+            className="w-full h-full object-cover object-top font-semibold"
             alt={`image of ${title}`}
           />
         </div>
