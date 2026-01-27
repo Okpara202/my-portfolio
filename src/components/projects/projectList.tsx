@@ -28,6 +28,20 @@ export const projects = [
     link: "https://griggsspecialisthospital.com.ng/",
   },
   {
+    title: "The Pivot",
+    description:
+      "Co-developed a comprehensive analytics platform, implementing responsive UI, data visualizations, and collaboration features with seamless back-end integration.",
+    src: "/image/pivot.jpg",
+    link: "https://thepivotsite.netlify.app/",
+  },
+  {
+    title: "The Pivot Challenge",
+    description:
+      "Co-developed digital transformation platform empowering Nigerian entrepreneurs with practical tools and community-driven business growth.",
+    src: "/image/challenge.jpg",
+    link: "https://thepivot.netlify.app/",
+  },
+  {
     title: "HashAd",
     description:
       "A full-stack advertisement banner manager and portfolio builder that allows students within campuses to upload products and or services and display them across digital spaces",
