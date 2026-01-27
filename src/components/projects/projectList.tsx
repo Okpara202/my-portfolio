@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "BB Tutors",
+    description:
+      "This is an online front for the bb tutors tutoring agency. Allows them to sale their mathematics video tutorials.",
+    src: "/image/bbtutors.png",
+    link: "https://www.bbtutors.org/",
+  },
+  {
     title: "Tutera",
     description:
       "Tutera is an LMS built to empower educators across africa to teach, own, and earn on their own terms all in one simple platform.",
