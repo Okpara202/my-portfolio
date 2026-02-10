@@ -8,9 +8,11 @@ import Testimonial from "./components/testimonial/testimonial";
 import Contact from "./components/contact/contact";
 import Footer from "./components/footer/footer";
 import FooterBottom from "./components/footer/footerBottom";
+import MiniMenu from "./components/miniMenu/miniMenu";
 
 function App() {
   const [light, setLight] = useState(false);
+  const [showMiniMenu, setShowMiniMenu] = useState(false);
 
   // TODO: Add animation to testimonial section
 
@@ -49,6 +51,35 @@ function App() {
             />
           </a>
         </div>
+
+        {/* Fixed Menu Icon */}
+        <div className="fixed bottom-10 right-20 z-50">
+          <button
+            onClick={() => setShowMiniMenu(!showMiniMenu)}
+            className="w-14 h-14 bg-designColor text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            title="Toggle Menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mini Menu */}
+        <MiniMenu
+          isOpen={showMiniMenu}
+          onClose={() => setShowMiniMenu(false)}
+        />
       </div>
     </div>
   );
