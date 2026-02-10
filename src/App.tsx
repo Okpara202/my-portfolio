@@ -26,7 +26,7 @@ function App() {
         <NavBar toggleMode={toggleMode} light={light} />
       </div>
       <div className="max-w-screen-xl mx-auto lgl:px-16 overflow-x-hidden">
-        <Banner light={light} />
+        <Banner />
         <Features />
         <Project />
         <Resume />
