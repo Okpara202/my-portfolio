@@ -1,6 +1,8 @@
 import { FaFacebookF, FaLinkedinIn, FaX } from "react-icons/fa6";
 import { GlowingLogo } from "../navbar/navbarStuff/logoSvg";
-import { motion } from "framer-motion"; // Import motion from Framer Motion
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import { navLinksData } from "../navbar/navbarStuff/navLink";
 
 function Footer() {
   return (
@@ -57,22 +59,28 @@ function Footer() {
           whileInView={{ opacity: 1 }} // WhilewhileInView to full opacity
           transition={{ duration: 0.5, delay: 0.2 }} // Transition duration and delay
         >
-          {["Home", "Contacts", "Projects", "Features", "Testimonial"].map(
-            (link, index) => (
-              <li key={index}>
-                <motion.a
-                  className="w-full text-lg hover:text-designColor cursor-pointer duration-300 relative group"
-                  href={`#${link.toLowerCase().replace(" ", "")}`}
-                  initial={{ opacity: 0, x: -20 }} // Slide in from left
-                  whileInView={{ opacity: 1, x: 0 }} // WhilewhileInView to full opacity and position
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }} // Staggered delays
+          {navLinksData.map((navlink, index) => (
+            <li key={navlink._id}>
+              <motion.div
+                className="w-full text-lg hover:text-designColor cursor-pointer duration-300 relative group"
+                initial={{ opacity: 0, x: -20 }} // Slide in from left
+                whileInView={{ opacity: 1, x: 0 }} // WhilewhileInView to full opacity and position
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }} // Staggered delays
+              >
+                <Link
+                  to={navlink.link}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="relative"
                 >
-                  {link}
+                  {navlink.title}
                   <span className="absolute h-[1px] w-full inline-flex -bottom-1 left-0 -translate-x-[100%] bg-designColor group-hover:translate-x-0 transition-transform duration-300"></span>
-                </motion.a>
-              </li>
-            ),
-          )}
+                </Link>
+              </motion.div>
+            </li>
+          ))}
         </motion.ul>
       </div>
       <div className="w-full h-full justify-items-center md:justify-items-normal">
