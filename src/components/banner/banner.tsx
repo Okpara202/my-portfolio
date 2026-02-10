@@ -1,7 +1,7 @@
 import LeftBanner from "./leftBanner";
 import { motion } from "framer-motion";
 
-function Banner({ light }: { light: boolean }) {
+function Banner() {
   return (
     <>
       <section
@@ -19,7 +19,7 @@ function Banner({ light }: { light: boolean }) {
         >
           <motion.img
             className="rounded-4xl z-10"
-            src={light ? "/image/favour cartoon.jpg" : "/image/favour1.jpg"}
+            src={"/image/okpara.png"}
             alt="Image of Favour Okpara"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
