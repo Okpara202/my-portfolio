@@ -107,6 +107,15 @@
     color: hsl(var(--foreground));
   }
 
+  /* The custom cursor adds .cursor-none to <html> only once it is actually
+     mounted and running, so a JS failure or a touch device leaves the native
+     pointer alone. Text fields keep their caret — losing that is a real cost,
+     and the flourish isn't worth it. */
+  html.cursor-none,
+  html.cursor-none *:not(input):not(textarea) {
+    cursor: none !important;
+  }
+
   /* Scrollbar, tuned to the palette rather than left default. */
   * {
     scrollbar-width: thin;

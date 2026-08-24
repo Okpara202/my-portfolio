@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaDownload, FaLocationDot } from "react-icons/fa6";
 import { hero, profile } from "../../data/site";
+import { AnimatedName } from "../ui/AnimatedName";
 import { Magnetic } from "../ui/Magnetic";
 import { SocialIcons } from "../ui/SocialIcons";
 
@@ -53,13 +54,8 @@ export function Hero({ ready }: { ready: boolean }) {
           </span>
         </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          {...rise(0.12)}
-          className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6"
-        >
-          {profile.name}
-        </motion.h1>
+        {/* Name — animates letter by letter, so it carries its own entrance. */}
+        <AnimatedName name={profile.name} ready={ready} />
 
         {/* The rotating claim — the one sentence that says what he does. */}
         <motion.p

@@ -5,6 +5,7 @@ import { Intro } from "./components/Intro";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Backdrop } from "./components/ui/Backdrop";
+import { CustomCursor } from "./components/ui/CustomCursor";
 import { ScrollProgress } from "./components/ui/ScrollProgress";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -25,6 +26,7 @@ function App() {
     <>
       <Intro onDone={() => setReady(true)} />
 
+      <CustomCursor />
       <Backdrop />
       <ScrollProgress />
       <Navbar />

@@ -25,7 +25,10 @@ export function Work() {
           lead={work.lead}
         />
 
-        <Reveal className="grid md:grid-cols-2 gap-6" stagger={0.08}>
+        <Reveal
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          stagger={0.08}
+        >
           {work.featured.map((project) => (
             <ProjectCard key={project.title} project={project} featured />
           ))}
@@ -117,6 +120,7 @@ function ProjectCard({
               rel: "noopener noreferrer",
             }
           : {})}
+        {...(project.link ? { "data-cursor": "view" } : {})}
         className="surface h-full flex flex-col overflow-hidden transition-colors duration-300 hover:border-brown/50 relative"
       >
         <motion.div
@@ -126,11 +130,7 @@ function ProjectCard({
         />
 
         {/* Thumbnail, or a typographic stand-in when there's no shot to show. */}
-        <div
-          className={`relative overflow-hidden bg-secondary ${
-            featured ? "aspect-[16/10]" : "aspect-[16/9]"
-          }`}
-        >
+        <div className="relative overflow-hidden bg-secondary aspect-[16/9]">
           {project.src ? (
             <img
               src={project.src}
@@ -153,36 +153,33 @@ function ProjectCard({
           )}
         </div>
 
-        <div className="relative p-5 md:p-6 flex flex-col flex-1">
-          <div className="flex items-baseline justify-between gap-3 mb-2">
-            <h3
-              className={`font-heading font-bold text-foreground ${
-                featured ? "text-xl md:text-2xl" : "text-lg"
-              }`}
-            >
+        <div className="relative p-4 md:p-5 flex flex-col flex-1">
+          <div className="flex items-baseline justify-between gap-2 mb-1.5">
+            <h3 className="font-heading font-bold text-foreground text-lg leading-snug">
               {project.title}
             </h3>
-            <span className="font-mono text-[0.65rem] uppercase tracking-wider text-brown shrink-0">
+            <span className="font-mono text-[0.6rem] uppercase tracking-wider text-brown shrink-0">
               {project.role}
             </span>
           </div>
 
-          <p className="text-sm leading-relaxed text-muted-foreground flex-1">
+          {/* Clamped so six cards on a row stay the same height. */}
+          <p className="text-[0.875rem] leading-relaxed text-muted-foreground line-clamp-3 flex-1">
             {project.blurb}
           </p>
 
           {project.note && (
-            <p className="mt-3 flex items-center gap-2 font-mono text-[0.7rem] text-muted-foreground/80">
-              <FaCircleInfo className="text-brown/70" />
+            <p className="mt-2.5 flex items-start gap-2 font-mono text-[0.65rem] leading-snug text-muted-foreground/80">
+              <FaCircleInfo className="text-brown/70 mt-0.5 shrink-0" />
               {project.note}
             </p>
           )}
 
-          <ul className="flex flex-wrap gap-2 mt-5">
+          <ul className="flex flex-wrap gap-1.5 mt-4">
             {project.stack.map((tech) => (
               <li
                 key={tech}
-                className="font-mono text-[0.7rem] px-2.5 py-1 rounded-full bg-secondary text-muted-foreground"
+                className="font-mono text-[0.65rem] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground"
               >
                 {tech}
               </li>

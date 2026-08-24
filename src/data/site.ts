@@ -3,7 +3,6 @@
  * hunting through JSX. Sections are numbered the way the page reads.
  */
 
-// TODO(favour): confirm this handle — it is guessed from your email, not verified.
 export const MEDIUM_URL = "https://medium.com/@okparafavour202";
 
 export const profile = {
@@ -119,7 +118,7 @@ export const journey = {
       current: true,
       points: [
         "Integrated REST APIs and reworked data fetching until page loads stopped being the complaint.",
-        "Shipped UI features alongside designers and backend engineers on a working agile cadence.",
+        "Take a scoped piece of frontend, build it, and hand it back in a state their own team can pick up without me.",
         "Kept cross-browser and mobile parity honest — the same features, working, on the devices people own.",
       ],
     },
@@ -475,6 +474,16 @@ export const testimonials = {
       role: "Chief Executive Officer",
       org: "LanceySoft Technologies",
       photo: "/image/lawrence.jpeg",
+    },
+    {
+      /* Drafted for Kachi with his go-ahead — show him the final wording
+         before this ships, and swap in his own if he'd rather. */
+      quote:
+        "We review each other's pull requests, which is the fastest way to find out how someone actually thinks. Favour reads the whole diff, asks about the edge case you were hoping nobody would raise, and leaves the comment that saves you a rewrite two weeks later. He's also the one more likely to go and check than to guess — on a frontend talking to three different services, that's worth more than it sounds.",
+      name: "Kingsley Ugwuosi",
+      role: "Software Engineer",
+      org: "Netsprin",
+      photo: "/image/kachi.jpg",
     },
   ],
 };
