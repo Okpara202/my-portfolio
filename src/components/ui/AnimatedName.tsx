@@ -8,52 +8,71 @@ import { motion, useReducedMotion } from "framer-motion";
  * sheen crosses the whole word every few seconds so it isn't dead between
  * interactions.
  */
+const SIZE = "text-4xl sm:text-5xl md:text-7xl lg:text-8xl";
+
 export function AnimatedName({ name, ready }: { name: string; ready: boolean }) {
   const reduced = useReducedMotion();
-  const letters = Array.from(name);
 
   if (reduced) {
     return (
-      <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6">
+      <h1 className={`font-heading font-bold ${SIZE} tracking-tight mb-6`}>
         {name}
       </h1>
     );
   }
 
+  /* Split by word, not by letter: each word is its own unbreakable row of
+     letters, so a narrow screen wraps between names instead of mid-name.
+     `offset` keeps the drop-in stagger running across the whole name. */
+  const words = name.split(" ");
+  let offset = 0;
+
   return (
     <h1
       aria-label={name}
-      className="relative font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6"
+      className={`relative font-heading font-bold ${SIZE} tracking-tight mb-6`}
     >
-      <span aria-hidden className="inline-flex flex-wrap justify-center">
-        {letters.map((char, i) => {
-          /* Preserve the space between names without letting it collapse. */
-          if (char === " ") return <span key={i} className="w-[0.28em]" />;
+      <span
+        aria-hidden
+        className="flex flex-wrap justify-center gap-x-[0.28em]"
+      >
+        {words.map((word) => {
+          const start = offset;
+          offset += word.length;
 
           return (
-            <motion.span
-              key={i}
-              className="inline-block origin-bottom cursor-default"
-              initial={{ opacity: 0, y: "0.5em", rotateX: -70, filter: "blur(8px)" }}
-              animate={
-                ready
-                  ? { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }
-                  : undefined
-              }
-              transition={{
-                duration: 0.7,
-                delay: 0.12 + i * 0.045,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{
-                y: -10,
-                scale: 1.08,
-                color: "hsl(var(--brown))",
-                transition: { type: "spring", stiffness: 400, damping: 14 },
-              }}
-            >
-              {char}
-            </motion.span>
+            <span key={start} className="inline-flex whitespace-nowrap">
+              {Array.from(word).map((char, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block origin-bottom cursor-default"
+                  initial={{
+                    opacity: 0,
+                    y: "0.5em",
+                    rotateX: -70,
+                    filter: "blur(8px)",
+                  }}
+                  animate={
+                    ready
+                      ? { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }
+                      : undefined
+                  }
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.12 + (start + i) * 0.045,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{
+                    y: -10,
+                    scale: 1.08,
+                    color: "hsl(var(--brown))",
+                    transition: { type: "spring", stiffness: 400, damping: 14 },
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
           );
         })}
       </span>

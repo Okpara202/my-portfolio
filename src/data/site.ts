@@ -485,6 +485,14 @@ export const testimonials = {
       org: "Netsprin",
       photo: "/image/kachi.jpg",
     },
+    {
+      quote:
+        "I hand over a lot of briefs, and most people start building straight away. Favour asks first — who the page is for, what it's meant to do, why that headline and not the other one. Mildly annoying in the moment, and the reason the campaign pages actually worked: they loaded fast, held up on every screen, and converted better than anything we'd shipped before. Marketing doesn't often get to say the build was the easy part.",
+      name: "Winifred",
+      role: "Digital Marketer",
+      org: "Netsprin",
+      photo: "/image/winifred.jpeg",
+    },
   ],
 };
 

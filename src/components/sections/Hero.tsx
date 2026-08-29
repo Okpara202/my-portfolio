@@ -33,7 +33,7 @@ export function Hero({ ready }: { ready: boolean }) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="section-container flex flex-col items-center text-center pt-32 md:pt-36">
         {/* Availability */}
@@ -57,10 +57,13 @@ export function Hero({ ready }: { ready: boolean }) {
         {/* Name — animates letter by letter, so it carries its own entrance. */}
         <AnimatedName name={profile.name} ready={ready} />
 
-        {/* The rotating claim — the one sentence that says what he does. */}
+        {/* The rotating claim — the one sentence that says what he does.
+            The min-heights reserve room for the longest clause at each width
+            so the rest of the hero doesn't jump as it types; nothing is
+            clipped if a clause runs a line longer than expected. */}
         <motion.p
           {...rise(0.2)}
-          className="text-xl md:text-3xl font-heading text-balance max-w-3xl mb-7 min-h-[4.5rem] md:min-h-[5rem]"
+          className="text-lg sm:text-xl md:text-3xl font-heading text-balance w-full max-w-3xl mb-7 min-h-[7rem] sm:min-h-[5.5rem] md:min-h-[5rem] break-words"
         >
           <span className="text-muted-foreground">{hero.intro} </span>
           <span className="text-foreground">{clause}</span>
